@@ -20,8 +20,8 @@
 !------------------------------------------------------------------
 
          integer, parameter :: KEYORB = 215
-         integer, parameter :: NNNP   = 10000
-         integer, parameter :: NNN1   = 10010
+         integer, parameter :: NNNP   = 590
+         integer, parameter :: NNN1   = 600
          integer, parameter :: NNNW   = 127
          integer, parameter :: NNNWM1 = 126
          integer, parameter :: NNNWM2 = 125
