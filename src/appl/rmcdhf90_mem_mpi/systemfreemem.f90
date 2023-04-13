@@ -20,7 +20,7 @@
 !MemTotal:       264566412 kB
 !MemTotal:       1056570236 kB
       REAL(DOUBLE) :: SYSTEMFreeMem
-      INTEGER      :: SUMMem, LENG
+      INTEGER*8      :: SUMMem, LENG
       CHARACTER(LEN=128) :: LINE,CMem
 !-----------------------------------------------
 !

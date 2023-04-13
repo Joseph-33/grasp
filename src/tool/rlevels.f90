@@ -41,7 +41,7 @@
       CHARACTER*4 iatjp(ndim), JFraction(1:2*Jmax+1)  ! J
       CHARACTER*4 Lev_J(ndim)                         ! J
       CHARACTER g92mix*6
-      CHARACTER*64 string_CSF(ndim), string_PRN(ndim) ! String in LSJ
+      CHARACTER*150 string_CSF(ndim), string_PRN(ndim) ! String in LSJ
       CHARACTER util_lbl_file*256
 !
       INTEGER i, j, iargc, ios, ncountState, nFile, mFile
@@ -338,7 +338,7 @@
       CHARACTER*1 Lev_par(ndim)
       CHARACTER*4 Lev_J(ndim)
       CHARACTER*15 RECORD
-      CHARACTER*64 string_CSF(ndim)
+      CHARACTER*150 string_CSF(ndim)
 !
       INTEGER IOS, ITEST, Lev_POS(ndim), Icount, ImaxCount
       REAL WEIGHTS
