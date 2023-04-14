@@ -35,8 +35,8 @@ subroutine rcsfexcitation
 
    decoding = 'spdfghiklmn'
 
-   open (11, file='excitationdata', status='unknown', form='formatted')
-   open (12, file='rcsfgenerate.log', status='unknown', form='formatted')
+   open (11, file='tmp_excitationdata', status='unknown', form='formatted')
+   open (12, file='tmp_rcsfgenerate.log', status='unknown', form='formatted')
 
 ! Generate initial input to jjgen
 

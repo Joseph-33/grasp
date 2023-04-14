@@ -41,9 +41,9 @@
       if (ii1 == 0) then
          
       else
-         open(unit=utfil, file='fil1.dat', status='unknown', position='asis')
+         open(unit=utfil, file='tmp_fil1.dat', status='unknown', position='asis')
       endif
-      open(unit=nyfil, file='clist.new', status='unknown', position='asis')
+      open(unit=nyfil, file='tmp_clist.new', status='unknown', position='asis')
       slut1 = .FALSE.
       slut2 = single
       cf = 0

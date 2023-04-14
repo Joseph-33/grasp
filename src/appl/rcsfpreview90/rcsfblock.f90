@@ -21,7 +21,7 @@
       PARAMETER (MAX_CSF = 1000000)
       CHARACTER*300 LINE1, LINE2, LINE3
       CHARACTER*1500 string(5),string4
-      CHARACTER(LEN=*), PARAMETER:: input='rcsf.out', output=''
+      CHARACTER(LEN=*), PARAMETER:: input='tmp_rcsf.out', output=''
       CHARACTER*5  blkid(100), jblk
       INTEGER indx(100),norb(300)
       INTEGER ncfblk(100)

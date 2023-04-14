@@ -51,11 +51,11 @@
 !-----------------------------------------------
 
 
-      open(unit=193,file='excitationdata',status='unknown')
+      open(unit=193,file='tmp_excitationdata',status='unknown')
       !rite(*,*) ' Excitationdata file opened'
 
 
-      open(unit=logfil,file='rcsf.log',status='unknown')
+      open(unit=logfil,file='tmp_rcsf.log',status='unknown')
       !write(*,*)
       !write(*,*) 'THE LINES BELOW ARE DEBUG OUTPUT FROM THE'
       !write(*,*) 'CSF GENERATOR:   PLEASE IGNORE !!!       '
@@ -123,7 +123,7 @@
 !      write(*,200) 'The merged file is called rcsf.out.'
       if(mod(ii,2).eq.0.and.ii.ne.0) call copy7t9
       if(mod(ii,2).ne.0) then
-        open(unit=93,file='fil1.dat',status='unknown')
+        open(unit=93,file='tmp_fil1.dat',status='unknown')
         close(unit=93,status='delete')
       end if
       if (ii.eq.0) then
@@ -133,8 +133,17 @@
       close(unit=7)
       close(unit=9)
       close(193,status='delete') ! PJ
-      !call rcsfblock
+      !call rcsfblock  ! We don't call rcsfblock because it is not
+      !nessicary
 
+
+      call system ( "rm -f tmp_rcsf.out")
+      call system ( "rm -f tmp_rcsf.log")
+      call system ( "rm -f tmp_rcsfgenerate.log")
+      call system ( "rm -f tmp_fil1.dat")
+      call system ( "rm -f tmp_fil2.dat")
+      call system ( "rm -f tmp_excitationdata")
+      call system ( "rm -f tmp_clist.new" )
 
       stop
   100 format(A)

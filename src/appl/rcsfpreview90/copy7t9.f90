@@ -12,8 +12,8 @@
 !-----------------------------------------------
       character :: rad11*1000
 !-----------------------------------------------
-      open(fil_1, file='rcsf.out', status='unknown', position='asis')
-      open(unit=utfil, file='fil1.dat', status='unknown', position='asis')
+      open(fil_1, file='tmp_rcsf.out', status='unknown', position='asis')
+      open(unit=utfil, file='tmp_fil1.dat', status='unknown', position='asis')
       do while(.TRUE.)
          read (utfil, 999, end=100) rad11
          write (fil_1, 999) trim(rad11)

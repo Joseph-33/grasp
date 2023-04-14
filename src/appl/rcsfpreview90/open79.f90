@@ -18,11 +18,11 @@
 !-----------------------------------------------
       i1 = mod(i,2)
       if (i1 == 0) then
-         open(fil_1, file='fil1.dat', status='unknown', position='asis')
-         open(unit=utfil, file='rcsf.out', status='unknown', position='asis')
+         open(fil_1, file='tmp_fil1.dat', status='unknown', position='asis')
+         open(unit=utfil, file='tmp_rcsf.out', status='unknown', position='asis')
       else
-         open(fil_1, file='rcsf.out', status='unknown', position='asis')
-         open(unit=utfil, file='fil1.dat', status='unknown', position='asis')
+         open(fil_1, file='tmp_rcsf.out', status='unknown', position='asis')
+         open(unit=utfil, file='tmp_fil1.dat', status='unknown', position='asis')
       endif
       close(utfil)
       rewind (fil_1)
