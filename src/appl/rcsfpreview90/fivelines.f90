@@ -22,7 +22,7 @@
       data (orb(i),i=0,10)/ 's', 'p', 'd', 'f', 'g', 'h', 'i', 'k', 'l', 'm', &
          'n'/
       if (.not.first) then
-        open(unit=8,file='tmp_fil2.dat',status='unknown')
+        !open(unit=8,file='tmp_fil2.dat',status='unknown')
          open(unit=8, status='scratch', position='asis')
          write (8, 999)
          write (8, 999)

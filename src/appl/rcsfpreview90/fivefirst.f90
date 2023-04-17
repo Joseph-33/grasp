@@ -32,6 +32,7 @@
             stopp+3))<=ichar('9')) then
             stopp = stopp + 5
          else
+            write(*,*) "exit 1"
             exit
          endif
       end do
@@ -65,7 +66,7 @@
                   l = j
                end do
             endif
-            if (l == (-1)) exit
+            if (l == (-1)) write(*,*) "ex3"; exit
             if (rad1(pos:pos)=='-' .or. l==0) then
                med(n,l,0) = .TRUE.
             else
@@ -83,7 +84,7 @@
                   l = j
                end do
             endif
-            if (l == (-1)) exit
+            if (l == (-1)) write(*,*) "ex4"; exit
             if (rad2(pos:pos)=='-' .or. l==0) then
                med(n,l,0) = .TRUE.
             else
@@ -129,7 +130,7 @@
             stopp+3))<=ichar('9')) then
             stopp = stopp + 5
          else
-            exit
+            write(*,*) "ex5"; exit
          endif
       end do
       if (stopp /= 0) then
@@ -154,7 +155,7 @@
             stopp+3))<=ichar('9')) then
             stopp = stopp + 5
          else
-            exit
+            write(*,*) "ex6"; exit
          endif
       end do
       if (stopp /= 0) then
@@ -187,7 +188,7 @@
             stopp+3))<=ichar('9')) then
             stopp = stopp + 5
          else
-            exit
+            write(*,*) "ex7"; exit
          endif
       end do
       if (stopp /= 0) then
