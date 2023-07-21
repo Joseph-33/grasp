@@ -67,12 +67,16 @@
 !-----------------------------------------------
       INTEGER :: J, I, NIT, JSEQ, KOUNT, K
       REAL(DOUBLE) :: WTAEV, WTAEV0, DAMPMX
-      LOGICAL :: CONVG, LSORT, dvdfirst
+      LOGICAL :: CONVeG, CONVG, LSORT, dvdfirst
 !-----------------------------------------------
-
 
       NCFTOT = NCF
       !IF (myid .EQ. 0) PRINT *, '===SCF==='
+ 
+!jbc CONVeG - separate convergence criteria
+!jbc for orbitals (CONVG) and for energy (CONVeG)
+               CONVG = .FALSE.
+               CONVeG = .FALSE.
 
 !=======================================================================
 !   Determine Orthonomalization order --- lsort
@@ -223,10 +227,14 @@
 !cjb unified convergence criteria in RMCDHF and RMCDHF_MPI
 !cjb     IF(DABS(WTAEV-WTAEV0).LT.1.0D-8.and.              &
 !cjb                   DAMPMX.LT.1.0D-2) CONVG=.true.
-         IF (ABS((WTAEV - WTAEV0)/WTAEV) < 0.001*ACCY) CONVG = .TRUE.
-         WTAEV0 = WTAEV
-         IF (.NOT.CONVG) CYCLE
-         IF (LDBPR(25) .AND. .NOT.LDBPR(24) .AND. MYID==0) CALL PRWF (0)
+!jbc CONVeG 
+!        IF (ABS((WTAEV - WTAEV0)/WTAEV) < 0.001*ACCY) CONVG = .TRUE. 
+         IF (ABS((WTAEV - WTAEV0)/WTAEV) < 0.001*ACCY) CONVeG = .TRUE. 
+         WTAEV0 = WTAEV 
+!jbc CONVeG
+!        IF (.NOT.CONVG) CYCLE  
+         IF (.NOT.CONVG .or. .NOT.CONVeG) CYCLE  
+         IF (LDBPR(25) .AND. .NOT.LDBPR(24) .AND. MYID==0) CALL PRWF (0) 
             !IF (EOL) CALL matrix (dvdfirst)
          GO TO 5
 
