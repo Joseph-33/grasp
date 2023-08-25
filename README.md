@@ -1,10 +1,10 @@
-# General Relativistic Atomic Structure Package
+# GRASP - The General-purpose Relativistic Atomic Structure Package
 
 ![Tests][tests-badge]
 [![][doxygen-badge]][doxygen-url]
 [![][manual-badge]][manual-pdf]
 
-The General Relativistic Atomic Structure Package (GRASP) is a set of Fortran 90
+The General-purpose Relativistic Atomic Structure Package (GRASP) is a set of Fortran 90
 programs for performing fully-relativistic electron structure calculations of
 atoms.
 
